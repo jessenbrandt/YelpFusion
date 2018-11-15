@@ -24,8 +24,8 @@ export class SearchService {
     };
   }
 
-  getYelp(price: string, location: string): Observable<any> {
-    return this.http.get<any[]>(`${this.corsURL}/${this.yelpAPI}/businesses/search?location=${location}&price=${price}`, this.httpOptions).pipe(catchError(this.handleError("getYelp, []")))
+  getYelp(price, city, state): Observable<any> {
+    return this.http.get(`${this.corsURL}/${this.yelpAPI}/businesses/search?location=${city}, ${state}&open_now=true&price=${price}`, this.httpOptions).pipe(catchError(this.handleError("getYelp")))
   }
 
 }
