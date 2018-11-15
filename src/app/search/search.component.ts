@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
 
   getYelp() {
     this.searchService.getYelp(this.form.value.price, this.form.value.city, this.form.value.state).subscribe(results => {
-      this.food = results.businesses[Math.floor(Math.random() * results.businesses.length)]
+      this.food = results.businesses[Math.floor(Math.random() *50)]
       return this.food
     })
   }
